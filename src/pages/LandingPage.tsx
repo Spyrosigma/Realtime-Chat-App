@@ -6,70 +6,79 @@ export function LandingPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex flex-col items-center justify-center px-4 relative overflow-hidden">
-      {/* Animated background elements */}
+    <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center py-12 px-3 sm:px-5 lg:px-6 relative overflow-hidden">
+      {/* Reduced background blob sizes */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
-        <div className="absolute -top-40 -left-40 w-80 h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute top-0 -right-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-40 left-20 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        <div className="absolute -top-36 -left-36 w-72 h-72 bg-emerald-900 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
+        <div className="absolute top-0 -right-16 w-64 h-64 bg-emerald-800 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-36 left-16 w-64 h-64 bg-emerald-700 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto text-center text-white relative z-10">
-        <div className="mb-12">
-          <div className="flex justify-center items-center mb-6">
-            <MessageSquare className="h-20 w-20 text-white" />
+      <div className="w-full max-w-3xl mx-auto text-center text-white relative z-10 space-y-6">
+        {/* Reduced hero section sizes */}
+        <div className="space-y-6">
+          <div className="flex justify-center items-center">
+            <MessageSquare className="h-14 w-14 sm:h-16 sm:w-16 text-emerald-500" />
           </div>
-          <h1 className="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-            Welcome to ChatApp
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-600 px-3">
+            Welcome to VartaLap
           </h1>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-emerald-100/70 max-w-xl mx-auto px-3">
             Connect with people around the world in real-time through our modern messaging platform.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto">
-          <FeatureCard
-            icon={<Users className="h-8 w-8" />}
-            title="Global Community"
-            description="Connect with users worldwide in our vibrant community"
-          />
-          <FeatureCard
-            icon={<Sparkles className="h-8 w-8" />}
-            title="Real-time Chat"
-            description="Instant messaging with real-time updates and notifications"
-          />
-          <FeatureCard
-            icon={<MessageSquare className="h-8 w-8" />}
-            title="User Friendly"
-            description="Clean and intuitive interface for the best chat experience"
-          />
-        </div>
-
-        <div className="space-x-4">
+        {/* Reduced button sizes */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:space-x-3 px-3">
           <button
             onClick={() => navigate('/auth')}
-            className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all duration-200 transform hover:scale-105"
+            className="w-full sm:w-auto bg-emerald-500/20 text-emerald-500 px-6 py-3 rounded-lg font-semibold 
+                     hover:bg-emerald-500/30 transition-all duration-200 
+                     focus:outline-none focus:ring-2 focus:ring-emerald-500/50 transform hover:scale-105"
           >
             Get Started
           </button>
           <button
             onClick={() => navigate('/auth')}
-            className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all duration-200 transform hover:scale-105"
+            className="w-full sm:w-auto bg-transparent border-2 border-emerald-500/50 text-emerald-500 px-6 py-3 
+                     rounded-lg font-semibold hover:bg-emerald-500/10 transition-all duration-200 
+                     transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
           >
             Login
           </button>
+        </div>
+
+        {/* Reduced feature card sizes */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 px-3">
+          <FeatureCard
+            icon={<Users className="h-7 w-7" />}
+            title="Global Community"
+            description="Connect with users worldwide in our vibrant community"
+          />
+          <FeatureCard
+            icon={<Sparkles className="h-7 w-7" />}
+            title="Real-time Chat"
+            description="Instant messaging with real-time updates and notifications"
+          />
+          <FeatureCard
+            icon={<MessageSquare className="h-7 w-7" />}
+            title="User Friendly"
+            description="Clean and intuitive interface for the best chat experience"
+          />
         </div>
       </div>
     </div>
   );
 }
 
+// Updated FeatureCard with smaller padding and text
 function FeatureCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
-    <div className="backdrop-blur-lg bg-white/10 p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-colors duration-200">
-      <div className="flex justify-center mb-4 text-white">{icon}</div>
-      <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
-      <p className="text-blue-100">{description}</p>
+    <div className="backdrop-blur-lg bg-gray-800/50 p-5 rounded-xl border border-emerald-500/20 
+                    hover:bg-gray-800/70 transition-colors duration-200 flex flex-col items-center h-full">
+      <div className="flex justify-center mb-3 text-emerald-500">{icon}</div>
+      <h3 className="text-lg font-semibold mb-2 text-emerald-500">{title}</h3>
+      <p className="text-sm text-emerald-100/70 text-center">{description}</p>
     </div>
   );
 }
