@@ -18,7 +18,8 @@ export function LandingPage() {
         {/* Reduced hero section sizes */}
         <div className="space-y-6">
           <div className="flex justify-center items-center">
-            <MessageSquare className="h-14 w-14 sm:h-16 sm:w-16 text-emerald-500" />
+            {/* <MessageSquare className="h-14 w-14 sm:h-16 sm:w-16 text-emerald-500" /> */}
+            <img src="/xlogo.png" alt="VartaLap Logo" className="h-20 w-20 rounded-full" />
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-600 px-3">
             Welcome to VartaLap

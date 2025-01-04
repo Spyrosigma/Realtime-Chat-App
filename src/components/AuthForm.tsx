@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthStore } from '../store/authStore';
-import { Mail, Lock, MessageSquare } from 'lucide-react';
+import { Mail, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+
 
 export function AuthForm() {
   const [isLogin, setIsLogin] = useState(true);
@@ -43,8 +44,8 @@ export function AuthForm() {
         <div 
           onClick={() => navigate('/')} 
           className="flex flex-col items-center mb-8 cursor-pointer group"
-        >
-          <MessageSquare className="h-14 w-14 text-emerald-500 mb-2 transform group-hover:scale-110 transition-transform" />
+          >
+          <img src="/xlogo.png" alt="VartaLap Logo" className="h-20 w-20 rounded-full" />
           <span className="text-2xl font-bold text-emerald-500">VartaLap</span>
         </div>
         
